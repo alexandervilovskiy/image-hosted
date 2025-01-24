@@ -1,6 +1,8 @@
+/* styles.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background: #000;
+  font-family: "Lato", sans-serif;
+  color: rgba(255, 255, 255, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,12 +13,13 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   width: 100%;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 #drop-area {
@@ -26,6 +29,7 @@ body {
   margin: 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
 #drop-area.highlight {
@@ -33,11 +37,94 @@ body {
 }
 
 p {
-  margin-top: 0;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.65);
+  width: 500px;
+  text-align: justify;
+  line-height: 1.5em;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  margin: 10px 0 0 5px;
+  padding-top: 10px;
 }
 
-.my-form {
-  margin-bottom: 10px;
+p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p a:visited {
+  color: #fff;
+}
+
+.shimmer {
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 3em;
+  margin: 0 auto;
+  padding: 0 140px 0 0;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.1);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
 
 #gallery {
@@ -52,6 +139,7 @@ p {
   object-fit: cover;
   margin: 5px;
   border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .button {
@@ -62,6 +150,7 @@ p {
   cursor: pointer;
   border-radius: 5px;
   border: none;
+  transition: background 0.3s;
 }
 
 .button:hover {
@@ -80,6 +169,8 @@ p {
   width: calc(100% - 110px);
   padding: 10px;
   margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 #url-upload button {
@@ -89,6 +180,7 @@ p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 #url-upload button:hover {
