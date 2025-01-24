@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <meta property="og:image" content="" id="ogImageMeta" />
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Uploader</title>
+</head>
+<style>
+    body {
+        background-color: #09090b;
+    }
+</style>
+<body class="min-h-screen flex flex-col justify-center">
+    <div class="container">
+        <h1>Image Uploader</h1>
+        <div id="drop-area">
+            <form class="my-form">
+                <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+                <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                <label class="button" for="fileElem">Select some files</label>
+            </form>
+        </div>
+        <div id="gallery"></div>
+        <div id="url-upload">
+            <h2>Upload from URL</h2>
+            <input type="text" id="imageUrl" placeholder="Enter image URL">
+            <button onclick="uploadFromUrl()">Upload</button>
+        </div>
+    </div>
+    <img class="flex mx-auto h-fit max-w-[32rem] w-full p-4" src="" id="uploadedImage" style="display: none;" />
+    <script src="script.js"></script>
+</body>
+</html>
