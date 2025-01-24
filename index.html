@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
@@ -11,15 +10,15 @@
     <link rel="stylesheet" href="/static/main.css">
     <link rel="stylesheet" href="styles.css">
     <title>Image Uploader</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-color: #09090b;
-    }
-</style>
 <body class="min-h-screen flex flex-col justify-center">
     <div class="container">
-        <h1>Image Uploader</h1>
+        <h1 class="shimmer">Image Uploader</h1>
         <div id="drop-area">
             <form class="my-form">
                 <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
@@ -29,9 +28,9 @@
         </div>
         <div id="gallery"></div>
         <div id="url-upload">
-            <h2>Upload from URL</h2>
-            <input type="text" id="imageUrl" placeholder="Enter image URL">
-            <button onclick="uploadFromUrl()">Upload</button>
+            <h2 class="text-xl font-bold mb-2">Upload from URL</h2>
+            <input type="text" id="imageUrl" placeholder="Enter image URL" class="w-full p-2 border border-gray-300 rounded mr-2">
+            <button onclick="uploadFromUrl()" class="p-2 bg-green-500 text-white rounded hover:bg-green-600">Upload</button>
         </div>
     </div>
     <img class="flex mx-auto h-fit max-w-[32rem] w-full p-4" src="" id="uploadedImage" style="display: none;" />
