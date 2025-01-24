@@ -130,4 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ogImageMeta.content = window.location.origin + '/' + imagePath;
   }
+
+  // Экспорт функции handleFiles в глобальную область видимости
+  window.handleFiles = handleFiles;
 });
