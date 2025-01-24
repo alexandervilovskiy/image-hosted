@@ -70,6 +70,7 @@ class Upload {
 
         if ($is_error !== UPLOAD_ERR_OK) {
             $array['error']['upload'] = 1;
+            $this->log_error("Upload error for file: $name, error code: $is_error");
             return false;
         }
 
@@ -83,11 +84,13 @@ class Upload {
         if (!$this->is_support_type($type)) {
             $array['error']['upload'] = 1;
             $array['error']['type'] = 1;
+            $this->log_error("Unsupported file type for file: $name");
         }
 
         if (!$this->is_support_size($array['size']['filesize'])) {
             $array['error']['upload'] = 1;
             $array['error']['size'] = 1;
+            $this->log_error("File size too large for file: $name");
         }
 
         if ($array['error']['upload'] == 1) {
@@ -183,6 +186,11 @@ class Upload {
         }
 
         return $val;
+    }
+
+    private function log_error($message) {
+        $log_file = __DIR__ . '/upload_errors.log';
+        file_put_contents($log_file, date('Y-m-d H:i:s') . " - " . $message . PHP_EOL, FILE_APPEND);
     }
 }
 
